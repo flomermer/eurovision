@@ -30,15 +30,15 @@ class VotesView extends Component{
       data: {year, country: 'France', string_dir: 'from'},
     });
     request.then(({data}) => {
-      let votes = data[0].voted_to;
-      votes = _.orderBy(votes, ['points'], ['desc']);
-      votes = votes.splice(0,MAX_LINES);
-      votes.forEach((vote) => { //order it as {title, value} object for the ChartLines View
-        vote.title = vote.country;
-        vote.value = vote.points;
-        delete vote.country; delete vote.points;
-      })
-      this.setState({votes});
+      // let votes = data[0].voted_to;
+      // votes = _.orderBy(votes, ['points'], ['desc']);
+      // votes = votes.splice(0,MAX_LINES);
+      // votes.forEach((vote) => { //order it as {title, value} object for the ChartLines View
+      //   vote.title = vote.country;
+      //   vote.value = vote.points;
+      //   delete vote.country; delete vote.points;
+      // })
+      // this.setState({votes});
     })
   }
   render(){
