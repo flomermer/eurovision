@@ -3,16 +3,17 @@ import './style.scss';
 import Line from './Line';
 
 class ChartLines extends Component{
+  renderLines(){
+    let {data} = this.props;
+    console.log(data);
+    return data.map((line) => {
+      return <Line key={line.title} line={line} />
+    })
+  }
   render(){
     return(
       <div className='ChartLines'>
-        <Line value={12} />
-        <Line value={6} />
-        <Line value={9} />
-        <Line value={5} />
-        <Line value={8} />
-        <Line value={3} />
-        <Line value={10} />
+        {this.renderLines()}
       </div>
     );
   }

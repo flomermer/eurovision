@@ -6,16 +6,19 @@ class Line extends Component{
     super(props);
     this.renderBars = this.renderBars.bind(this);
   }
-  renderBars(){
+  renderBars(value){
     let bars = [];
-    for(let i=0; i<this.props.value; i++)
-      bars.push(<Bar val={i} />);
+    for(let i=0; i<value; i++)
+      bars.push(<Bar key={i} />);
     return bars;
   }
   render(){
+    let {line} = this.props;
+    if(line.value===0) return false;
     return(
       <div className='Line'>
-          {this.renderBars()}
+          <div className='title'>{line.title}</div>
+          {this.renderBars(line.value)}
       </div>
     )
   }

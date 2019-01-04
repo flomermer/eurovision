@@ -5,10 +5,14 @@
   justify-content: space-around;
 
   .Line{
-    margin-right: 20px;
+    margin-right: 15px;
     display: flex;
     flex-direction: column-reverse;
 
+    .title{
+      font-size: 0.8em;
+      color: yellow;
+    }
     .Bar{
       width: 30px;
       height: 10px;

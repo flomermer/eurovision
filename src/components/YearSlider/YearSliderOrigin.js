@@ -10,28 +10,24 @@ import 'react-rangeslider/lib/index.css'
 class YearSlider extends Component{
   constructor(props){
     super(props);
-    this.state = {value: this.props.year};
-    this.handleChange     =   this.handleChange.bind(this);
-    this.changeCompleted  =   this.changeCompleted.bind(this);
+
+    this.handleChange = this.handleChange.bind(this);
   }
-  handleChange(value){
-    this.setState({value});
-  }
-  changeCompleted(){
-    this.props.updateYear(this.state.value); //update global year
+  handleChange(year){
+    this.props.updateYear(year);
   }
   render(){
     const todayYear = Number(moment().format('YYYY'));
     const max = todayYear+1;
     const min = 1956;
-    const year = this.state.value===max ? 'כל השנים' : this.state.value;
+    const year = this.props.year===max ? 'כל השנים' : this.props.year;
 
     return(
       <div className={`YearSlider ${this.props.className}`}>
-          <Slider value={this.state.value} handleLabel={year.toString()}
-                  orientation="vertical"
-                  onChange={this.handleChange} onChangeComplete={this.changeCompleted}
+          <Slider value={this.props.year}
+                  orientation="vertical" onChange={this.handleChange}
                   min={min} max={max} step={1}
+                  handleLabel={year.toString()}
                   tooltip={false}
           />
       </div>
