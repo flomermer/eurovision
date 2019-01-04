@@ -1,0 +1,40 @@
+.YearSlider{
+  .rangeslider{
+    height: 90%;
+
+    background: #fff;
+    .rangeslider__fill{
+      background: #fff;
+    }
+    .rangeslider__handle{
+      outline: none;
+
+      .rangeslider__handle-label{
+        width: 60px;
+        height: 25px;
+        line-height: 25px;
+        text-align: center;
+        position: relative;
+        left: 43px; bottom: 7px;
+        background-color: #fff;
+        color: #000;
+        font-size: 0.8em;
+        transition: all 100ms ease-in;
+        border-radius: 4px;
+        display: inline-block;
+
+        &:after{
+          content: ' ';
+          position: absolute;
+          width: 0;
+          height: 0;
+          border-top: 5px solid transparent;
+          border-bottom: 5px solid transparent;
+          border-right: 8px solid #fff;
+          right: 100%;
+          top: 7px;
+        }
+      }
+    }
+  }
+}

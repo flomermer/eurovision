@@ -1,0 +1,19 @@
+.ChartLines{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  .Line{
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column-reverse;
+
+    .Bar{
+      width: 30px;
+      height: 10px;
+      background: #fff;
+      margin-top: 5px;
+    }
+  }
+}

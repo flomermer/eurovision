@@ -1,0 +1,41 @@
+body {
+  background: url(./misc/images/bgs/view2.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  min-height: 100vh;
+}
+
+.App {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+  .col{
+    border-right: 0px solid white;
+    box-sizing: border-box;
+    padding: 20px;
+  }
+  .col1{
+    margin-right: auto;
+    width: 6%;
+    display: flex;
+    justify-content: center;
+
+    .YearSlider{
+      height: 95vh;
+      position: fixed;
+    }
+  }
+  .col2, .col3{
+    display: flex;
+    justify-content: center;
+    //align-items: flex-end;
+    text-align: center;
+    min-height: 100vh;
+    width: 47%;
+    color:white;
+  }
+}
