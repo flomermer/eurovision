@@ -14,7 +14,7 @@ const MAX_LINES = isMobile ? 5 : 10;
 class VotesView extends Component{
   constructor(props){
     super(props);
-    this.state = {votes: [], dir: 'to', country: 'israel', parts: [{country: 'israel'},{country: 'france'}]}
+    this.state = {votes: [], dir: 'from', country: 'israel', parts: []}
 
     this.onSelectChange =   this.onSelectChange.bind(this);
     this.fetchData      =   this.fetchData.bind(this);
