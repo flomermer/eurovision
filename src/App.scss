@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Rubik');
-
 body {
   background: url(./misc/images/bgs/view2.png) no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -10,35 +9,64 @@ body {
   min-height: 100vh;
 }
 
-.App {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  font-family: 'Rubik',sans-serif;
-
-  .col{
-    border-right: 0px solid white;
-    box-sizing: border-box;
-    padding: 20px;
-  }
-  .col1{
-    margin-right: auto;
-    width: 6%;
+@media screen and (min-width: 751px) {
+  .App {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    .YearSlider{
-      height: 80vh;
-      position: fixed;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-family: 'Rubik',sans-serif;
+
+    .col{
+      border-right: 0px solid white;
+      box-sizing: border-box;
+      padding: 20px;
+    }
+    .col1{
+      margin-right: auto;
+      width: 6%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .YearSlider{
+        height: 80vh;
+        position: fixed;
+      }
+    }
+    .col2, .col3{
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      text-align: center;
+      min-height: 100vh;
+      width: 47%;
+      color:white;
+
+      .VotesView{
+        margin-bottom: 40px;
+      }
     }
   }
-  .col2, .col3{
+}
+
+@media screen and (max-width: 750px) {
+  .App{
     display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    text-align: center;
-    min-height: 100vh;
-    width: 47%;
-    color:white;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .col1{
+      margin-right: auto;
+      width: 20%;
+      .YearSlider{
+        height: 90vh;
+        position: fixed;
+        margin-left: 10px;
+      }
+    }
+    .col2, .col3{
+      width: 80%;
+      margin-left: 20%;
+      margin-top: 20px;
+    }
   }
 }

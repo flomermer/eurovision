@@ -8,6 +8,7 @@
     "moment": "^2.23.0",
     "node-sass": "^4.11.0",
     "react": "^16.7.0",
+    "react-device-detect": "^1.6.1",
     "react-dom": "^16.7.0",
     "react-rangeslider": "^2.2.0",
     "react-redux": "^6.0.0",

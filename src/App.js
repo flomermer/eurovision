@@ -20,12 +20,10 @@ class App extends Component {
           <YearSlider/>
         </div>
         <div className='col col2'>
-          <div>
-            <VotesView />
-          </div>
+          <VotesView/>
         </div>
         <div className='col col3'>
-          <div>moshe</div>
+          
         </div>
       </div>
     );

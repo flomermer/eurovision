@@ -7,7 +7,9 @@ import {connect} from 'react-redux';
 import {ROOT_API} from '../../consts';
 import _ from 'lodash';
 
-const MAX_LINES = 10;
+import {isMobile} from "react-device-detect";
+
+const MAX_LINES = isMobile ? 5 : 10;
 
 class VotesView extends Component{
   constructor(props){
