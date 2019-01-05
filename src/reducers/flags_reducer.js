@@ -10,7 +10,6 @@ export default function(state=[], action){
         flag[key.toLowerCase()] = value;
         delete flag[key];
       })
-      console.log(flags);
       return flags;
     default:
       return state;
