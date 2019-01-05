@@ -5,9 +5,9 @@ import Line from './Line';
 class ChartLines extends Component{
   renderLines(){
     let {data} = this.props;
-    console.log(data);
-    return data.map((line) => {
-      return <Line key={line.title} line={line} />
+    //console.log(data);
+    return data.map((line,i) => {
+      return <Line key={i} line={line} />
     })
   }
   render(){

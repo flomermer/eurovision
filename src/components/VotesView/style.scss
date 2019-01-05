@@ -1,4 +1,31 @@
 .VotesView{
-  color: white;
-  
+    display: flex;
+    flex-direction: row;
+    .settings{
+      text-align: left;
+      margin-left: 20px;
+
+      select{
+        font-size: 0.9em;
+        background: transparent;
+        color: #fff;
+        border: 0;
+        outline: 0;
+        margin-bottom: 10px;
+        width: 130px;
+        font-family: 'Rubik', sans-serif;
+        option{
+          background: black;
+          border: 0px;
+          outline: 0px;
+        }
+      }
+    }
+
+    .ChartLines{
+      .title{
+        margin-top: 12px;
+        margin-right: 20px;
+      }
+    }
 }

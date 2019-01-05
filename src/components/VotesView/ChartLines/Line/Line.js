@@ -14,7 +14,7 @@ class Line extends Component{
   }
   render(){
     let {line} = this.props;
-    if(line.value===0) return false;
+    // if(line.value===0) return false;
     return(
       <div className='Line'>
           <div className='title'>{line.title}</div>
