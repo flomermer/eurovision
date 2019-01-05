@@ -49,6 +49,9 @@ class VotesView extends Component{
         vote.title = <img src={this.props.flags[vote.country.toLowerCase()]} alt={vote.country} title={vote.country} />;
         vote.titleHover = vote.country;
         vote.value = Number(vote.points);
+        if(year>2015 && year<(new Date()).getFullYear()) //since 2016 votes maximum has been changed
+            vote.value = _.round(vote.value / 2);
+
         delete vote.points;
       })
       votes = _.orderBy(votes, ['value'], ['desc']);
