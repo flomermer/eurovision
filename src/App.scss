@@ -21,7 +21,6 @@ body {
     .col{
       border-right: 0px solid white;
       box-sizing: border-box;
-      padding: 3% 2%;
     }
     .col1{
       margin-right: auto;
@@ -36,12 +35,16 @@ body {
     }
     .col2, .col3{
       display: flex;
-      justify-content: center;
-      align-items: flex-end;
+      flex-direction: column;
       text-align: center;
       min-height: 100vh;
       color:white;
       border: 0px solid white;
+      & > div{
+        height: 50%;
+        border: 0px solid yellow;
+
+      }
     }
     .col2{
       width: 54%;
