@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Rubik');
+@import './consts/_global';
+
 body {
   background: url(./misc/images/bgs/view2.png) no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -19,7 +21,7 @@ body {
     .col{
       border-right: 0px solid white;
       box-sizing: border-box;
-      padding: 20px;
+      padding: 3% 2%;
     }
     .col1{
       margin-right: auto;
@@ -42,20 +44,21 @@ body {
       border: 0px solid white;
     }
     .col2{
-      width: 54%
+      width: 54%;
+      border: 0px solid yellow;
     }
     .col3{
       width: 40%;
     }
 
     .VotesView{
-      margin-bottom: 20px;
-      margin-left: 40px;
+      border: 0px solid white;
+      width: 100%;
     }
   }
 }
 
-@media screen and (max-width: 750px) {
+@media #{$sm-res}{
   .App{
     display: flex;
     flex-direction: row;

@@ -1,28 +1,47 @@
-.ChartLines{
-  $bar-height: 12px;
-  $bar-margin: 4px;
+@import '../../../consts/_global';
 
+$bar-height-sm: 10px;
+$bar-height-md: 12px;
+$bar-height-lg: 14px;
+
+$bar-margin-sm: 4px;
+$bar-margin-md: 4px;
+$bar-margin-lg: 10px;
+
+@mixin bar() {
+  @media #{$sm-res}{height: $bar-height-sm; margin-top: $bar-margin-sm;}
+  @media #{$md-res}{height: $bar-height-md; margin-top: $bar-margin-md;}
+  @media #{$lg-res}{height: $bar-height-lg; margin-top: $bar-margin-lg;}
+}
+@mixin chartLineHeight(){
+  @media #{$sm-res}{height: ($bar-height-sm+$bar-margin-sm) * 14};
+  @media #{$md-res}{height: ($bar-height-md+$bar-margin-md) * 14};
+  @media #{$lg-res}{height: ($bar-height-lg+$bar-margin-lg) * 14};
+}
+
+.ChartLines{
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  border: 0px solid white;
-  height: ($bar-height+$bar-margin) * 14;
+  justify-content: space-between;
+  border: 0px solid red;
+  @include chartLineHeight();
 
   .Line{
-    width: 45px;
     display: flex;
     flex-direction: column-reverse;
+    align-items: center;
+    border: 0px solid orange;
 
     .title{
       font-size: 0.8em;
       color: yellow;
+      margin-top: 12px;
     }
     .Bar{
-      width: 35px;
-      height: $bar-height;
+      width: 32px;
+      @include bar;
       background: #fff;
-      margin-top: $bar-margin;
     }
   }
 }
