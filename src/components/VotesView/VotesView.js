@@ -48,8 +48,7 @@ class VotesView extends Component{
       let votes = data;
       votes.forEach((vote) => { //order it as {title, value} object for the ChartLines View
         vote.flag  = this.props.flags[vote.country.toLowerCase()];
-        vote.title = <img src={this.props.flags[vote.country.toLowerCase()]} alt={vote.country} title={vote.country} />;
-        vote.titleHover = vote.country;
+        vote.title = <img src={this.props.flags[vote.country.toLowerCase()]} alt={vote.country} title={vote.country} />;        
         vote.value = Number(vote.points);
         if(year>2015 && year<(new Date()).getFullYear()) //since 2016 votes maximum has been changed
             vote.value = _.round(vote.value / 2);
