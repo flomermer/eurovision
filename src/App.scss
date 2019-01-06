@@ -38,12 +38,19 @@ body {
       align-items: flex-end;
       text-align: center;
       min-height: 100vh;
-      width: 47%;
       color:white;
+      border: 0px solid white;
+    }
+    .col2{
+      width: 54%
+    }
+    .col3{
+      width: 40%;
+    }
 
-      .VotesView{
-        margin-bottom: 40px;
-      }
+    .VotesView{
+      margin-bottom: 20px;
+      margin-left: 40px;
     }
   }
 }
@@ -53,6 +60,7 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    color: white;
 
     .col1{
       margin-right: auto;

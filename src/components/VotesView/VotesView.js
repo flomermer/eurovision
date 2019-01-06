@@ -110,20 +110,23 @@ class VotesView extends Component{
     if(this.props.year===new Date().getFullYear()) return null; //
     return(
       <div className='VotesView'>
-        <ChartLines data={this.state.votes} />
-        <div className='settings'>
-          <div>
-            <select name='dir' value={this.state.dir} onChange={this.onSelectChange}>
-              <option value='from'>From</option>
-              <option value='to'>To</option>
-            </select>
+        <header>Votes</header>
+        <main>
+          <ChartLines data={this.state.votes} />
+          <div className='settings'>
+            <div>
+              <select name='dir' value={this.state.dir} onChange={this.onSelectChange}>
+                <option value='from'>From</option>
+                <option value='to'>To</option>
+              </select>
+            </div>
+            <div>
+              <select name='country' value={this.state.country} onChange={this.onSelectChange}>
+                  {this.renderSlctCountryOptions()}
+              </select>
+            </div>
           </div>
-          <div>
-            <select name='country' value={this.state.country} onChange={this.onSelectChange}>
-                {this.renderSlctCountryOptions()}
-            </select>
-          </div>
-        </div>
+        </main>
       </div>
     );
   }
