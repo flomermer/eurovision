@@ -5,7 +5,7 @@ import Line from './Line';
 class ChartLines extends Component{
   renderLines(){
     let {data} = this.props;
-    console.log(data);
+    //console.log(data);
     return data.map((line,i) => {
       return <Line key={i} line={line} />
     })

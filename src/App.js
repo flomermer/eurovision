@@ -6,7 +6,8 @@ import {bindActionCreators} from 'redux';
 import {fetchFlags} from './actions';
 
 import YearSlider from './components/YearSlider';
-import VotesView from './components/VotesView';
+import VotesView  from './components/VotesView';
+import Statistics from './components/Statistics';
 
 class App extends Component {
   componentDidMount(){
@@ -21,11 +22,11 @@ class App extends Component {
         </div>
         <div className='col col2'>
           <div></div>
-          <VotesView/>
+          <div><VotesView/></div>
         </div>
         <div className='col col3'>
           <div></div>
-          <div></div>
+          <div><Statistics /> </div>
         </div>
       </div>
     );

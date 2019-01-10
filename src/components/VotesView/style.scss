@@ -1,17 +1,10 @@
 .VotesView{
-  header{
-    text-align: center;
-    font-size: 1.7em;
-    font-weight: bold;
-    margin-bottom: 20px;
-    @media screen and (min-width: 1600px){
-      font-size: 3em;
-    }
-  }
   main{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    height: 100%;
+
     .settings{
       text-align: left;
       select{

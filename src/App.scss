@@ -21,6 +21,16 @@ body {
     .col{
       border-right: 0px solid white;
       box-sizing: border-box;
+
+      & .view-header{
+          text-align: center;
+          font-size: 2em;
+          font-weight: bold;
+          margin-bottom: 20px;
+          @media screen and (min-width: 1600px){
+            font-size: 3em;
+          }
+      }
     }
     .col1{
       margin-right: auto;
@@ -41,9 +51,16 @@ body {
       color:white;
       border: 0px solid white;
       & > div{
-        height: 50%;
         border: 0px solid yellow;
+        &:nth-child(1){height: 50%;}
+        &:nth-child(2){height: 50%;}
 
+        & > div{ //View-Component
+          height: 95%;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+        }
       }
     }
     .col2{
@@ -56,7 +73,8 @@ body {
 
     .VotesView{
       border: 0px solid white;
-      width: 100%;
+      width: 80%;
+      margin: 0 auto;
     }
   }
 }
@@ -67,6 +85,14 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     color: white;
+
+    & .view-header{
+        margin-right: 15%;
+        text-align: center;
+        font-size: 1.3em;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
 
     .col1{
       margin-right: auto;
@@ -79,7 +105,7 @@ body {
     }
     .col2, .col3{
       width: 80%;
-      margin-left: 20%;
+      margin-left: 18%;
       margin-top: 20px;
     }
   }

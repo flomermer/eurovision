@@ -1,0 +1,52 @@
+@import '../../../consts/_global';
+
+@mixin pos($r, $t) {
+  bottom: 41px+ ($t);
+  left: 13% + $r;
+}
+
+
+.Podium{
+  footer{
+    margin: 0 auto;
+  }
+  main{
+    border: 0px solid white;
+    height: 100%;
+    background: url(./images/podium.png) no-repeat bottom center;
+    background-size: contain;
+    border: 0 px solid white;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    & > div{
+      position: absolute;
+      border: 0px solid white;
+      width: 20%;
+
+      img{
+        @media #{$sm-res}  {
+
+        }
+      }
+    }
+    .pos-1{
+      @media #{$sm-res}{@include pos(23,0)};
+      @media #{$md-res}{@include pos(25,28)};
+      @media #{$lg-res}{@include pos(25,65)};
+    }
+    .pos-2{
+      @media #{$sm-res}{@include pos(-5,-15)};
+      @media #{$md-res}{@include pos(53,12)};
+      @media #{$lg-res}{@include pos(52,40)};
+    }
+    .pos-3{
+      @media #{$sm-res}{@include pos(52,-11)};
+      @media #{$md-res}{@include pos(0,5)};
+      @media #{$lg-res}{@include pos(0,30)};
+    }
+  }
+}
