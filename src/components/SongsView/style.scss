@@ -1,0 +1,23 @@
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 100%;
+  .TubeCharts {
+    width: 75%;
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    .Tube {
+      display: flex;
+      flex-direction: column-reverse;
+      height: 100%;
+      .Chunk {
+        flex-direction: column;
+        width: 80px;
+      }
+    }
+  }
+}

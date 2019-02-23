@@ -105,6 +105,7 @@ class VotesView extends Component{
       return <option key={part.country} value={part.country}>{part.country}</option>
     })
   }
+
   render(){
     if(this.props.year===new Date().getFullYear()) return null; //
     return(
