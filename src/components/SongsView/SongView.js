@@ -1,46 +1,58 @@
 import React, { Component } from "react";
 import TubeCharts from ".";
-
-const mockData = {
-  key: {
-    C: 7,
-    "G#": 2,
-    B: 3,
-    A: 5,
-    "C#": 4,
-    "A#": 2,
-    F: 2,
-    D: 6,
-    G: 2,
-    E: 2,
-    "F#": 1,
-    "D#": 3
-  },
-  lang: {
-    english: 23,
-    other: 16
-  },
-  composition: {
-    band: 6,
-    solo: 33
-  },
-  genre: {
-    pop: 40,
-    classic: 18,
-    rock: 2,
-    other: 40
-  }
-};
+import axios from "axios";
+import { ROOT_API } from "../../consts";
+import { connect } from "react-redux";
 
 class SongView extends Component {
-  state = {};
+  constructor(props) {
+    super(props);
+    this.state = { data: "", highlights: "" };
+    this.fetchSongStatistics = this.fetchSongStatistics.bind(this);
+  }
+  componentDidMount() {
+    this.fetchSongStatistics();
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.year !== this.props.year) this.fetchSongStatistics();
+  }
+
+  fetchSongStatistics() {
+    let { year } = this.props;
+    if (!this.state.data) {
+      const request = axios({
+        method: "GET",
+        url: `${ROOT_API}/formula/2020`
+      });
+      request.then(({ data }) => {
+        if (!data) return false;
+        this.setState({ data: data });
+      });
+    }
+    if (year <= 2019) {
+      const request = axios({
+        method: "GET",
+        url: `${ROOT_API}/formula/${year}`
+      });
+      request.then(({ data }) => {
+        if (!data) return false;
+        this.setState({ highlights: data.song });
+      });
+    }
+  }
+
   render() {
     return (
       <main>
-        <TubeCharts data={mockData} />
+        <header className="view-header">Song</header>
+        <TubeCharts data={this.state.data} highlights={this.state.highlights} />
       </main>
     );
   }
 }
+function mapStateToProps({ year }) {
+  return { year };
+}
 
-export default SongView;
+export default connect(mapStateToProps)(SongView);

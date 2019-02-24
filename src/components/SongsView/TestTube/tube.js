@@ -34,16 +34,34 @@ class Tube extends Component {
   }
 
   render() {
+    console.log(this.props.highlights);
     return (
       <div className="Tube">
-        {Object.keys(this.state.data).map((key, index) => (
-          <Chunk
-            key={index}
-            title={key}
-            height={this.state.data[key]}
-            color={this.getColor()}
-          />
-        ))}
+        <div className="cover">
+          <Chunk key="head" />
+        </div>
+        <div className="inTube">
+          {Object.keys(this.state.data).map((key, index) =>
+            this.props.highlights == key ? (
+              <Chunk
+                key={index}
+                title={key}
+                height={this.state.data[key]}
+                color={this.getColor()}
+                grey={false}
+              />
+            ) : (
+              <Chunk
+                key={index}
+                title={key}
+                height={this.state.data[key]}
+                color={this.getColor()}
+                grey={true}
+              />
+            )
+          )}
+        </div>
+        <h4>{this.props.title}</h4>
       </div>
     );
   }
