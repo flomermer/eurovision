@@ -38,8 +38,13 @@ class TubeCharts extends Component {
     // song data = artists, genres, key, language
     let highlights = this.props.highlights;
     let { artist, key, language } = highlights;
-    let genre = highlights.genres ? highlights.genres[0][0] : "other";
-    if (artist && genre && key && language)
+    let genre = highlights.genres
+      ? highlights.genres[0][0]
+        ? highlights.genres[0][0]
+        : "other"
+      : "other";
+    console.log(artist);
+    if (artist)
       this.setState({
         highlights: {
           composition: artist.length > 1 ? "band" : "solo",

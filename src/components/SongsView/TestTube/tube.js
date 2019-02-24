@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import Chunk from "./chunk";
 
-let colors = [
-  "#fff8e1",
+const colors = [
   "#ffecb3",
   "#ffe082",
   "#ffca28",
@@ -14,9 +13,12 @@ let colors = [
   "#ff6d00",
   "#bf360c",
   "#ff3d00",
-  "#fbe9e7",
+  "#8bc34a",
+  "#e53935",
   "#eeff41" // Lime,
 ];
+
+let colors_queue = colors;
 
 class Tube extends Component {
   constructor(props) {
@@ -27,14 +29,13 @@ class Tube extends Component {
   }
 
   getColor() {
-    const colorIndex = Math.floor(Math.random() * colors.length);
-    let color = colors[colorIndex];
-    //colors = colors.filter(_color => _color !== color);
+    const colorIndex = Math.floor(Math.random() * (colors.length - 1));
+    let color = colors_queue[colorIndex];
+    colors_queue = colors.filter(_color => _color !== color);
     return color;
   }
 
   render() {
-    console.log(this.props.highlights);
     return (
       <div className="Tube">
         <div className="cover">
@@ -42,7 +43,7 @@ class Tube extends Component {
         </div>
         <div className="inTube">
           {Object.keys(this.state.data).map((key, index) =>
-            this.props.highlights == key ? (
+            this.props.highlights == key || this.props.highlights == "" ? (
               <Chunk
                 key={index}
                 title={key}

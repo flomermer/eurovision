@@ -15,7 +15,7 @@ class Chunk extends Component {
         title={this.props.title}
         className="Chunk"
         style={{
-          backgroundColor: "#bdbdbd",
+          backgroundColor: "#f7f7f7",
           height: `${this.state.height}%`
         }}
       />

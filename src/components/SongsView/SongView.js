@@ -36,9 +36,11 @@ class SongView extends Component {
         url: `${ROOT_API}/formula/${year}`
       });
       request.then(({ data }) => {
-        if (!data) return false;
-        this.setState({ highlights: data.song });
+        if (!data) this.setState({ highlights: "" });
+        else this.setState({ highlights: data.song });
       });
+    } else {
+      this.setState({ highlights: "" });
     }
   }
 
