@@ -56,6 +56,7 @@ class TubeCharts extends Component {
     } else {
       key = "";
     }
+
     return {
       composition,
       lang,
