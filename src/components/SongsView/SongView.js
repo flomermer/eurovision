@@ -47,7 +47,7 @@ class SongView extends Component {
   render() {
     return (
       <main>
-        <header className="view-header">Song</header>
+        <header className="view-header Song">Song</header>
         <TubeCharts data={this.state.data} highlights={this.state.highlights} />
       </main>
     );

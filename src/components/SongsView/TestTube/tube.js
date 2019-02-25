@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import Chunk from "./chunk";
 
 const colors = [
-  "#ffecb3",
-  "#ffe082",
+  "#546e7a",
   "#ffca28",
   "#ffc107",
   "#ffa000",
@@ -15,7 +14,7 @@ const colors = [
   "#ff3d00",
   "#8bc34a",
   "#e53935",
-  "#eeff41" // Lime,
+  "#455a64"
 ];
 
 let colors_queue = colors;
@@ -36,11 +35,12 @@ class Tube extends Component {
   }
 
   isChunkHighlight(key) {
-    return this.props.highlights === key || this.props.highlights === ""
-      ? true
-      : false;
+    return this.props.highlights === key || this.props.highlights === "";
   }
 
+  isTitleHighlight(key) {
+    return this.props.highlights !== "" && this.props.highlights === key;
+  }
   render() {
     return (
       <div className="Tube">
@@ -55,6 +55,7 @@ class Tube extends Component {
               height={this.state.data[key]}
               color={this.getColor()}
               highlight={this.isChunkHighlight(key)}
+              showTitle={this.isTitleHighlight(key)}
             />
           ))}
         </div>
