@@ -14,8 +14,7 @@ let colors = [
   "#bf360c",
   "#ff3d00",
   "#8bc34a",
-  "#e53935",
-  "#455a64"
+  "#e53935"
 ];
 
 colors = _.shuffle(colors);
