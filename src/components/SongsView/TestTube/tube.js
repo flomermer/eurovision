@@ -21,13 +21,6 @@ const colors = [
 let colors_queue = colors;
 
 class Tube extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      data: this.props.data
-    };
-  }
-
   getColor() {
     const colorIndex = Math.floor(Math.random() * (colors.length - 1));
     let color = colors_queue[colorIndex];
@@ -46,11 +39,11 @@ class Tube extends Component {
           <Chunk key="head" />
         </div>
         <div className="inTube">
-          {Object.keys(this.state.data).map((key, index) => (
+          {Object.keys(this.props.data).map((key, index) => (
             <Chunk
               key={index}
               title={key}
-              height={this.state.data[key]}
+              height={this.props.data[key]}
               color={this.getColor()}
               highlight={this.isChunkHighlight(key)}
             />

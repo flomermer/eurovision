@@ -65,7 +65,6 @@ class TubeCharts extends Component {
   }
   getHighlightFields() {
     let highlights = this.calculateHighlights(this.props.highlights);
-    console.log(highlights);
     this.setState({ highlights: highlights });
   }
 
