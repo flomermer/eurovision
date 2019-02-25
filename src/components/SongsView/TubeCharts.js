@@ -17,7 +17,7 @@ class TubeCharts extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (prevProps.highlights != this.props.highlights) {
+    if (prevProps.highlights !== this.props.highlights) {
       this.getHighlightFields();
     }
   }
@@ -52,12 +52,10 @@ class TubeCharts extends Component {
     if (artist) {
       composition = artist.length > 1 ? "band" : "solo";
       lang = language === "english" ? "english" : "other";
-      key = key;
       genre = this.getHighlightGenre(highlights.genres);
     } else {
       key = "";
     }
-
     return {
       composition,
       lang,

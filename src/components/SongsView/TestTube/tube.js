@@ -36,9 +36,7 @@ class Tube extends Component {
   }
 
   isChunkHighlight(key) {
-    return this.props.highlights == key || this.props.highlights == ""
-      ? true
-      : false;
+    return this.props.highlights === key || this.props.highlights === "" ? true : false;
   }
 
   render() {
