@@ -10,21 +10,13 @@ class Chunk extends Component {
   }
 
   render() {
-    return this.props.grey ? (
+    let color = this.props.highlight ? this.state.color : "#f7f7f7";
+    return (
       <div
         title={this.props.title}
         className="Chunk"
         style={{
-          backgroundColor: "#f7f7f7",
-          height: `${this.state.height}%`
-        }}
-      />
-    ) : (
-      <div
-        title={this.props.title}
-        className="Chunk"
-        style={{
-          backgroundColor: this.state.color,
+          backgroundColor: color,
           height: `${this.state.height}%`
         }}
       />

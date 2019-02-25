@@ -35,6 +35,12 @@ class Tube extends Component {
     return color;
   }
 
+  isChunkHighlight(key) {
+    return this.props.highlights == key || this.props.highlights == ""
+      ? true
+      : false;
+  }
+
   render() {
     return (
       <div className="Tube">
@@ -42,25 +48,15 @@ class Tube extends Component {
           <Chunk key="head" />
         </div>
         <div className="inTube">
-          {Object.keys(this.state.data).map((key, index) =>
-            this.props.highlights == key || this.props.highlights == "" ? (
-              <Chunk
-                key={index}
-                title={key}
-                height={this.state.data[key]}
-                color={this.getColor()}
-                grey={false}
-              />
-            ) : (
-              <Chunk
-                key={index}
-                title={key}
-                height={this.state.data[key]}
-                color={this.getColor()}
-                grey={true}
-              />
-            )
-          )}
+          {Object.keys(this.state.data).map((key, index) => (
+            <Chunk
+              key={index}
+              title={key}
+              height={this.state.data[key]}
+              color={this.getColor()}
+              highlight={this.isChunkHighlight(key)}
+            />
+          ))}
         </div>
         <h4>{this.props.title}</h4>
       </div>

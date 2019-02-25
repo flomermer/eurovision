@@ -34,40 +34,41 @@ class TubeCharts extends Component {
     ));
   }
 
-  getHighlightFields() {
-    // song data = artists, genres, key, language
-    let highlights = this.props.highlights;
-    let { artist, key, language } = highlights;
-    let genre = highlights.genres
-      ? highlights.genres[0][0]
-        ? highlights.genres[0][0]
-        : "other"
+  getHighlightGenre(genres) {
+    let genre = genres ? (genres[0][0] ? genres[0][0] : "other") : "other";
+    return genre.includes("pop")
+      ? "pop"
+      : genre.includes("rock")
+      ? "rock"
+      : genre.includes("classic")
+      ? "classic"
       : "other";
-    console.log(artist);
-    if (artist)
-      this.setState({
-        highlights: {
-          composition: artist.length > 1 ? "band" : "solo",
-          lang: language === "english" ? "english" : "other",
-          key,
-          genre: genre.includes("pop")
-            ? "pop"
-            : genre.includes("rock")
-            ? "rock"
-            : genre.includes("classic")
-            ? "classic"
-            : "other"
-        }
-      });
-    else
-      this.setState({
-        highlights: {
-          composition: "",
-          lang: "",
-          genre: "",
-          key: ""
-        }
-      });
+  }
+
+  calculateHighlights(highlights) {
+    let { artist, key, language } = highlights;
+    let composition, lang, genre;
+    composition = lang = genre = "";
+    if (artist) {
+      composition = artist.length > 1 ? "band" : "solo";
+      lang = language === "english" ? "english" : "other";
+      key = key;
+      genre = this.getHighlightGenre(highlights.genres);
+    } else {
+      key = "";
+    }
+
+    return {
+      composition,
+      lang,
+      key,
+      genre
+    };
+  }
+  getHighlightFields() {
+    let highlights = this.calculateHighlights(this.props.highlights);
+    console.log(highlights);
+    this.setState({ highlights: highlights });
   }
 
   render() {
