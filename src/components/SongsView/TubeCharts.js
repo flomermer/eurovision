@@ -46,6 +46,14 @@ class TubeCharts extends Component {
   }
 
   calculateHighlights(highlights) {
+    if (highlights === "all")
+      return {
+        composition: "all",
+        lang: "all",
+        key: "all",
+        genre: "all"
+      };
+
     let { artist, key, language } = highlights;
     let composition, lang, genre;
     composition = lang = genre = "";

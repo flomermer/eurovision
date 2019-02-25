@@ -15,7 +15,7 @@ class Chunk extends Component {
     };
     return (
       <div
-        title={this.props.title}
+        title={`${this.props.title} - ${this.props.height}%`}
         className="Chunk"
         style={{
           backgroundColor: color,

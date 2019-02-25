@@ -40,7 +40,7 @@ class SongView extends Component {
         else this.setState({ highlights: data.song });
       });
     } else {
-      this.setState({ highlights: "" });
+      this.setState({ highlights: "all" });
     }
   }
 

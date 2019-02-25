@@ -3,8 +3,7 @@ import Chunk from "./chunk";
 import _ from "lodash";
 
 let colors = [
-  "#ffe082",
-  "#ffca28",
+  "#f44336",
   "#ffc107",
   "#ffa000",
   "#ff6f00",
@@ -13,17 +12,19 @@ let colors = [
   "#ff6d00",
   "#bf360c",
   "#ff3d00",
+  "#e53935",
   "#8bc34a",
-  "#e53935"
+  "#4caf50"
 ];
 
 class Tube extends Component {
   isChunkHighlight(key) {
-    return this.props.highlights === key || this.props.highlights === "";
+    console.log(this.props.highlights);
+    return this.props.highlights === key || this.props.highlights === "all";
   }
 
   isTitleHighlight(key) {
-    return this.props.highlights !== "" && this.props.highlights === key;
+    return this.props.highlights !== "all" && this.props.highlights === key;
   }
   render() {
     return (
