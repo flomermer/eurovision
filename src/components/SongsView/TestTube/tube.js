@@ -17,8 +17,6 @@ let colors = [
   "#e53935"
 ];
 
-colors = _.shuffle(colors);
-
 class Tube extends Component {
   isChunkHighlight(key) {
     return this.props.highlights === key || this.props.highlights === "";
