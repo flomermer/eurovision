@@ -1,24 +1,16 @@
 import React, { Component } from "react";
 
 class Chunk extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      color: this.props.color,
-      height: this.props.height
-    };
-  }
-
   render() {
-    let color = this.props.highlight ? this.state.color : "#f7f7f7";
+    let color = this.props.highlight ? this.props.color : "#f7f7f7";
     const title = this.props.showTitle ? "inline" : "none";
     const titleStyle = {
-      height: `${this.state.height}%`,
+      height: `${this.props.height}%`,
       color: color,
-      "font-weight": "bold",
+      fontWeight: "bold",
       display: `${title}`,
       position: "relative",
-      "font-size": "large",
+      fontSize: "large",
       bottom: "20px"
     };
     return (
@@ -27,7 +19,7 @@ class Chunk extends Component {
         className="Chunk"
         style={{
           backgroundColor: color,
-          height: `${this.state.height}%`
+          height: `${this.props.height}%`
         }}
       >
         <p style={titleStyle}>{this.props.title}</p>
