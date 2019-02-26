@@ -5,7 +5,7 @@ class Winner extends Component{
   songArtists(){
     let {winner} = this.props;
     if(!winner) return false;
-    let artists = ["tomer","moshe","david"];
+    let artists = winner.song.artist;
     return 'artist: ' + artists.map((artist) => `${artist}`).join(' & ');
   }
   render(){
