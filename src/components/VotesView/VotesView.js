@@ -115,7 +115,7 @@ class VotesView extends Component {
   }
 
   render() {
-    if (this.props.year === new Date().getFullYear()) return null; //
+    //if (this.props.year === new Date().getFullYear()) return null;
     return (
       <div className="VotesView">
         <header className="view-header">Votes</header>
