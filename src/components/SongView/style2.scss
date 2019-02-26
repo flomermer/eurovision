@@ -1,31 +1,28 @@
 @import '../../consts/_global';
 .SongView{
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  width: 100%;
-
   main {
-    border: 0px solid yellow;
+    border: 1px solid yellow;
     display: flex;
-    flex-direction: column;
-    width: 99%;
+    position: relative;
+    flex-direction: row;
+    justify-content: space-around;
     height: 100%;
 
     .TubeCharts {
-      border: 0px solid white;
-      width: 100%;
-      height: 100%;
+      display: none;
+      border: 1px solid white;
+
       display: flex;
       flex-direction: row;
       justify-content: space-evenly;
 
       .Tube {
         .title{font-size:1em;margin-top:5px;}
+
         .inTube {
           display: flex;
           flex-direction: column-reverse;
-          height: 80%;
+          height: 100%;
           width: 60px;
           left: 14px;
           position: relative;
@@ -35,7 +32,7 @@
 
           .Chunk {
             flex-direction: column;
-            width: 100%;
+            width: 60px;
 
             &:first-child {
               border-bottom-right-radius: 50px 50px;
@@ -59,44 +56,11 @@
           flex-direction: column;
           width: 100px;
         }
+        h4 {
+          padding: 0%;
+          margin: 9px;
+        }
       }
     }
   }
 }
-
-@media #{$sm-res}{
-  .SongView{
-    width: 100%;
-    .TubeCharts{
-      display: flex;
-      flex-direction: row;
-      width: 75%!important;
-
-      .Tube{
-        padding-top: 10px;
-        position: relative;
-
-        .title{          
-          position: absolute;
-          font-size: 0.5em!important;
-          width: 100%;
-          margin-left: 12px;
-          overflow: hidden;
-          text-align: center;
-
-        }
-        height: 200px;
-        .inTube{
-          width: 30px!important;
-        }
-        .Chunk{
-          width: 30px!important;
-          p{font-size: 1em!important}
-        }
-        .cover {
-            display: none;
-        }
-      }
-    }
-  }
-};
