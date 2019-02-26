@@ -4,7 +4,7 @@ import Chunk from "./chunk";
 let colors = [
   "#25228E",
   "#6A0CCF",
-  "#B331A9",
+  "#6a1b9a",
   "#B331A9",
   "#fdd835",
   "#e65100",
@@ -12,8 +12,8 @@ let colors = [
   "#bf360c",
   "#ff3d00",
   "#e53935",
-  "#B331A9",
-  "#483609"
+  "#d50000",
+  "#b71c1c"
 ];
 
 class Tube extends Component {
@@ -42,7 +42,7 @@ class Tube extends Component {
             />
           ))}
         </div>
-        <div className='title'>{this.props.title}</div>
+        <div className="title">{this.props.title}</div>
       </div>
     );
   }
