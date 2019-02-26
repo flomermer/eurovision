@@ -3,7 +3,7 @@ import './style.scss';
 import axios from 'axios';
 import {ROOT_API} from '../../../consts';
 
-class Winner extends Component{
+class AllTimesWinner extends Component{
   constructor(props){
     super(props);
     this.state = {winner: null}
@@ -22,7 +22,7 @@ class Winner extends Component{
   render(){
     let {winner} = this.state;
     return(
-      <div className='Winner'>
+      <div className='AllTimesWinner'>
         <header>History Winner</header>
         <main></main>
         <footer>{winner && winner.toUpperCase()}</footer>
@@ -31,4 +31,4 @@ class Winner extends Component{
   }
 }
 
-export default Winner;
+export default AllTimesWinner;

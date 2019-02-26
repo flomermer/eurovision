@@ -24,9 +24,11 @@ body {
 
       & .view-header{
           text-align: center;
-          font-size: 2em;
+          font-size: 1.9em;
           font-weight: bold;
           margin-bottom: 20px;
+          margin-top: 2%;
+          color: #cecece;
           @media screen and (min-width: 1600px){
             font-size: 3em;
           }

@@ -1,15 +1,15 @@
 import React, {Component} from 'react';
 import './style.scss';
-import Winner from './Winner';
+import AllTimesWinner from './AllTimesWinner';
 import Podium from './Podium';
 
 class Statistics extends Component{
   render(){
     return(
-      <div className='Statistics'>
+      <div className={`Statistics ${this.props.className}`}>
         <header className='view-header'>Statistics</header>
         <main>
-          <Winner/>
+          <AllTimesWinner/>
           <Podium />
         </main>
       </div>

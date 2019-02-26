@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Chunk from "./chunk";
-import _ from "lodash";
 
 let colors = [
   "#25228E",
@@ -43,7 +42,7 @@ class Tube extends Component {
             />
           ))}
         </div>
-        <h4>{this.props.title}</h4>
+        <div className='title'>{this.props.title}</div>
       </div>
     );
   }

@@ -1,0 +1,65 @@
+.SongView{
+  main {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 100%;
+
+    .TubeCharts {
+      position: absolute;
+      bottom: 21%;
+      width: 77%;
+      height: 56%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+
+      .Tube {
+        .title{font-size:1em;margin-top:5px;}
+
+        .inTube {
+          display: flex;
+          flex-direction: column-reverse;
+          height: 100%;
+          width: 60px;
+          left: 14px;
+          position: relative;
+          border: 5px solid #f7f7f7;
+          border-bottom-right-radius: 50px 50px;
+          border-bottom-left-radius: 50px 50px;
+
+          .Chunk {
+            flex-direction: column;
+            width: 60px;
+
+            &:first-child {
+              border-bottom-right-radius: 50px 50px;
+              border-bottom-left-radius: 50px 50px;
+            }
+            &:hover {
+              opacity: 0.9;
+              cursor: pointer;
+            }
+          }
+
+          .Chunk .grey {
+            background-color: grey;
+          }
+        }
+        .cover {
+          height: 14px;
+          left: 9%;
+          border-radius: 50px;
+          background-color: #f7f7f7;
+          flex-direction: column;
+          width: 100px;
+        }
+        h4 {
+          padding: 0%;
+          margin: 9px;
+        }
+      }
+    }
+  }
+}

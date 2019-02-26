@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "./style.scss";
 import Tube from "./TestTube/tube";
 
 class TubeCharts extends Component {

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import TubeCharts from ".";
+import './style.scss';
+import TubeCharts from "./TubeCharts";
 import axios from "axios";
 import { ROOT_API } from "../../consts";
 import { connect } from "react-redux";
@@ -46,10 +47,12 @@ class SongView extends Component {
 
   render() {
     return (
-      <main>
-        <header className="view-header Song">Song</header>
-        <TubeCharts data={this.state.data} highlights={this.state.highlights} />
-      </main>
+      <div className='SongView'>
+        <main>
+          <header className="view-header Song">Song</header>
+          <TubeCharts data={this.state.data} highlights={this.state.highlights} />
+        </main>
+      </div>
     );
   }
 }

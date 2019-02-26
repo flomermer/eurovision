@@ -27,9 +27,9 @@ class Podium extends Component{
     return(
       <div className='Podium'>
         <main>
-          <div className='pos-1'><Bff countries={podium['1']} /></div>
-          <div className='pos-2'><Bff countries={podium['2']} /></div>
-          <div className='pos-3'><Bff countries={podium['3']} /></div>
+          <div className='pos pos-1'><Bff countries={podium['1']} /></div>
+          <div className='pos pos-2'><Bff countries={podium['2']} /></div>
+          <div className='pos pos-3'><Bff countries={podium['3']} /></div>
         </main>
         <footer>Eurovision BFF</footer>
       </div>
