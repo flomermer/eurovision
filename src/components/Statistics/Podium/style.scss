@@ -26,27 +26,27 @@
       position: absolute;
       border: 0px solid white;
       width: 20%;
-
-      img{
-        @media #{$sm-res}  {
-
-        }
-      }
+    }
+    img{
+      margin: 2px;
+      @media #{$sm-res}{};
+      @media #{$md-res}{};
+      @media #{$lg-res}{width: 38%};
     }
     .pos-1{
-      @media #{$sm-res}{@include pos(23,0)};
-      @media #{$md-res}{@include pos(25,28)};
-      @media #{$lg-res}{@include pos(25,65)};
+      @media #{$sm-res}{@include pos(23,44)};
+      @media #{$md-res}{@include pos(25,72)};
+      @media #{$lg-res}{@include pos(25,155)};
     }
     .pos-2{
       @media #{$sm-res}{@include pos(-5,-15)};
-      @media #{$md-res}{@include pos(53,12)};
-      @media #{$lg-res}{@include pos(52,40)};
+      @media #{$md-res}{@include pos(43,45)};
+      @media #{$lg-res}{@include pos(46,110)};
     }
     .pos-3{
       @media #{$sm-res}{@include pos(52,-11)};
-      @media #{$md-res}{@include pos(0,5)};
-      @media #{$lg-res}{@include pos(0,30)};
+      @media #{$md-res}{@include pos(10,35)};
+      @media #{$lg-res}{@include pos(6.5,88)};
     }
   }
 }

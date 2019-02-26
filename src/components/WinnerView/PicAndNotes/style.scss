@@ -1,9 +1,9 @@
-.Winner{
+.PicAndNotes{
   display: flex;
   flex-direction: column;
   & > main{
     height: 70%;
-    background: url(./images/mic_winner.png) no-repeat center center;
+    background: no-repeat center center;
     background-size: contain;
   }
   & > footer{
@@ -12,7 +12,8 @@
     flex-direction: column;
     align-items: center;
 
-    & > div {
+    & .note{
+      z-index: 2;
       margin-top: 5px;
       border: 1px solid white;
       background: black;
@@ -20,10 +21,11 @@
       width: 55%;
       border-radius: 5px;
       cursor: default;
-    }
-    & .song:hover{
-      opacity: 0.7;
-      cursor: pointer;
+
+      &.withTitle:hover{
+        cursor: pointer;
+        opacity: 0.8;
+      }
     }
   }
 }
